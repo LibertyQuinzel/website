@@ -2,6 +2,7 @@
 
 A retro **DOS terminal–style portfolio** showcasing education, work, projects, and contact info.
 
+**Currently works on PC only! Yet to make it work on mobile devices!**
 ## Features
 
 * **Boot animation** simulating a vintage BIOS.
