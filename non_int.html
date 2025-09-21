@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Liberty Quinzel Portfolio</title>
+  <style>
+    @font-face {
+      font-family: 'DOSVGA';
+      src: url('PxPlus_IBM_VGA8.ttf') format('truetype');
+    }
+
+    body {
+      font-family: 'DOSVGA', monospace;
+      background-color: #f5f1e6; /* beige background */
+      color: #000000; /* black text */
+      margin: 0;
+      padding: 20px;
+      line-height: 1.6;
+    }
+
+    a {
+      color: #000000;
+      text-decoration: underline;
+    }
+
+    a:hover {
+      text-decoration: none;
+    }
+
+    h1, h2, h3 {
+      color: #000000;
+      margin-bottom: 8px;
+    }
+
+    hr {
+      border: 1px solid #000000;
+      margin: 20px 0;
+    }
+
+    .section {
+      margin-bottom: 30px;
+    }
+
+    ul {
+      margin-left: 20px;
+    }
+
+    /* Header with picture on left */
+    header {
+      display: flex;
+      align-items: center;
+      gap: 20px; /* space between image and text */
+      flex-wrap: wrap; /* allows stacking on small screens */
+    }
+
+    .profile-pic {
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      overflow: hidden;
+      flex-shrink: 0;
+      border: 2px solid #000;
+    }
+
+    .profile-pic img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    /* Responsive: stack on mobile */
+    @media (max-width: 600px) {
+      header {
+        flex-direction: column;
+        align-items: center;
+      }
+      .profile-pic {
+        margin-bottom: 15px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="section">
+    <!-- Circular profile picture slot -->
+    <div class="profile-pic">
+      <img src="assets/profile.jpg" alt="Profile Picture">
+    </div>
+
+    <div>
+      <h1>Swechcha Ambati</h1>
+      <p>Master of Science in Computer Science, NJIT</p>
+      <p>Email: <a href="mailto:libertyquinzel@gmail.com">libertyquinzel@gmail.com</a></p>
+      <p>LinkedIn: <a href="https://www.linkedin.com/in/ambati-swechcha-7291152a8" target="_blank">linkedin.com/in/swechcha-ambati</a></p>
+      <p>GitHub: <a href="https://github.com/LibertyQuinzel" target="_blank">github.com/LibertyQuinzel</a></p>
+      <p>Resume: <a href="assets/resume.pdf" target="_blank">[open resume]</a></p>
+    </div>
+  </header>
+
+  <hr>
+
+  <section class="section" id="about">
+    <h2>About</h2>
+    <p>I am currently pursuing my Master’s in Computer Science at NJIT. My interests include operating systems, cryptography, quantum computing. I am quite confused by and curious about AI. I enjoy reading/watching detective fiction and writing.</p>
+  </section>
+
+  <section class="section" id="education">
+    <h2>Education</h2>
+    <h3>New Jersey Institute of Technology</h3>
+    <p>Master of Science in Computer Science (Sept 2025)<br>Recipient of the Graduate Provost’s Scholarship</p>
+
+    <h3>Mahindra University</h3>
+    <p>Bachelor of Technology in Computer Science and Engineering (Aug 2021 – Jun 2025)<br>GPA: 7.82/10</p>
+    <p>Coursework: Medical Image Analysis (DL), Quantum Computing, Optimization for AI, Computational Intelligence, Machine Learning with Python, OS, Microprocessors, Algorithms, DBMS, OOP, Lean Startup, Design Thinking</p>
+  </section>
+
+  <section class="section" id="work">
+    <h2>Work Experience</h2>
+    <h3><a href='assets/certificate.pdf' target='_blank'>Summer Research Intern — QMatter Labs LLC</a></h3>
+    <p>Jun 2024 - Aug 2024</p>
+    <ul>
+      <li>Improved a hybrid quantum genetic algorithm for optimal charging station placement.</li>
+      <li>Collected and integrated data with an improved fitness function.</li>
+      <li>Developed metrics to analyze algorithm performance.</li>
+    </ul>
+  </section>
+<section class="section" id="projects">
+  <h2>Projects</h2>
+
+  <h3><a href="https://github.com/LibertyQuinzel/MIA_DEQ" target="_blank">Breast Cancer Classification (Deep Equilibrium Model)</a></h3>
+  <ul>
+    <li>Developed DEQ for mammogram classification with XAI integration.</li>
+    <li>Tools: Python, PyTorch, TensorFlow</li>
+  </ul>
+
+  <h3>Quantum Optimization Model</h3>
+  <ul>
+    <li>Applied CNN to image dataset for optimization.</li>
+    <li>Tools: Python</li>
+  </ul>
+
+  <h3>Team Creation Website</h3>
+  <ul>
+    <li>Platform for students to find teammates.</li>
+    <li>Tools: HTML, CSS, Bootstrap, jQuery, PHP, PostgreSQL</li>
+  </ul>
+
+  <h3><a href="https://github.com/LibertyQuinzel/Cricket-Commentary-Analysis-NLP-" target="_blank">Cricket Commentary Analysis</a></h3>
+  <ul>
+    <li>NLP techniques to extract highlights from commentary.</li>
+    <li>Tools: Python</li>
+  </ul>
+</section>
+
+
+  <section class="section" id="credits">
+    <h2>Credits</h2>
+    <p>Website designed by Swechcha Ambati. Font obtained from <a href="https://int10h.org/oldschool-pc-fonts/" target="_blank">this website</a> by VileR.</p>
+  </section>
+
+</body>
+</html>
