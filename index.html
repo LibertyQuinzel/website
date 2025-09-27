@@ -213,7 +213,7 @@
       ["edu      - education info     ",      "proj     - list of projects"],
       ["work     - work experience    ",     "res      - resume link"],
       ["ping     - contact details    ",    "cred     - credits & website info"],
-      ["cls      - clear the screen   "]
+      ["blog     - blog entries       ",    "cls      - clear the screen   "]
     ];
 
     const eduText = [
@@ -284,6 +284,12 @@ const projText = [
       "Since the course is all done, I just have fond memories of my struggles with the DOSBox interface. \nWhich inspired me to make my portfolio website remind me of it! Teehee :) "
     ];
 
+    const blogText = [
+      "Blog",
+      "------------------------------------------------------------",
+      "<a href='entry1.html' target='_blank' rel='noopener noreferrer'>adults and coffee cups</a>",
+    ];
+
     function appendOutput(text) {
       const div = document.createElement('div');
       div.innerHTML = text;
@@ -333,6 +339,9 @@ const projText = [
         workText.forEach(line => appendOutput(line));
       } else if (lowerCmd === 'proj') {
         projText.forEach(line => appendOutput(line));
+      
+      } else if (lowerCmd === 'blog') {
+        blogText.forEach(line => appendOutput(line));
       } else if (lowerCmd === 'ping') {
         contactText.forEach(line => appendOutput(line));
       } else if (lowerCmd === 'cred') {
