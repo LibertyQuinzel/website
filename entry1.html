@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>adults and coffee cups</title>
+  <style>
+    @font-face {
+      font-family: 'DOSVGA';
+      src: url('PxPlus_IBM_VGA8.ttf') format('truetype');
+    }
+
+    html, body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      font-family: 'DOSVGA', monospace;
+      background: #f9f9f6; /* paper-like base */
+      color: #111;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    /* Notebook ruled lines */
+    .notebook {
+      position: relative;
+      max-width: 1200px; /* wider page */
+      margin: 36px auto;
+      padding: 48px 112px 72px 112px; /* increase horizontal padding for nicer layout */
+      background: linear-gradient(#f9f9f6, #f8f8f5);
+      box-shadow: 0 10px 40px rgba(0,0,0,0.12);
+      border-radius: 6px;
+      min-height: calc(100vh - 120px);
+      box-sizing: border-box;
+      overflow: hidden;
+    }
+
+    /* horizontal ruled lines (deeper blue) */
+    .notebook::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      /* deeper blue ruled lines, spaced like notebook ruled paper */
+      background-image: repeating-linear-gradient(
+        to bottom,
+        rgba(10,34,85,0.22) 0px,
+        rgba(10,34,85,0.22) 1px,
+        transparent 1px,
+        transparent 36px
+      );
+      /* align the ruled lines with the notebook's top padding so text lines sit on the rules */
+      background-position: 0 48px;
+      pointer-events: none;
+    }
+
+    /* left margin red line */
+    .notebook::after {
+      content: "";
+      position: absolute;
+      left: 116px; /* aligns with new left padding (padding-left - 4px) */
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background: rgba(200,0,0,0.6);
+      pointer-events: none;
+    }
+
+    /* clean notebook background (no stains) */
+    .notebook {
+      background-image: linear-gradient(#f9f9f6, #f8f8f5);
+      background-blend-mode: normal;
+    }
+
+    h1 {
+      margin: 0 0 36px 0;
+      font-size: 30px;
+      line-height: 36px; /* match ruled line spacing */
+      color: #222;
+    }
+
+
+    /* align text to notebook ruled lines: make line-height match rule spacing (36px) */
+    .content {
+      max-width: 760px; /* allow more width for text */
+      line-height: 36px; /* aligns with the repeating rule spacing */
+      font-size: 18px;
+      color: #111;
+      position: relative;
+      z-index: 2;
+      font-family: 'DOSVGA', monospace; /* use IBM DOSVGA font */
+      padding-left: 12px; /* nudge text a tad to the right */
+    }
+
+    .content .meta {
+      color: #666;
+      font-size: 13px;
+      margin-bottom: 36px; /* align meta to grid */
+    }
+
+    /* paragraphs use full line increments so text lines sit on ruled lines */
+    .content p { margin: 0 0 36px 0; }
+
+    .content em { color: #333; font-style: italic; }
+
+    .content blockquote {
+      margin: 18px 0;
+      padding-left: 16px;
+      border-left: 3px solid rgba(10,34,85,0.12);
+      color: #2a2a2a;
+      background: rgba(10,34,85,0.015);
+    }
+
+    /* image at the right hand corner */
+    .corner-image {
+      position: absolute;
+      right: 16px;
+      top: 16px;
+      width: 220px;
+      height: auto;
+      object-fit: cover;
+      border-radius: 6px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+      z-index: 3;
+    }
+
+    /* small back link */
+    .back {
+      display: inline-block;
+      margin-top: 28px;
+      color: #0066cc;
+      text-decoration: underline;
+    }
+
+    @media (max-width: 800px) {
+      .notebook { padding: 28px 24px; }
+      .notebook::after { left: 48px; }
+      /* shift the ruled lines to match the smaller padding */
+      .notebook::before { background-position: 0 28px; }
+      .corner-image { width: 140px; right: 12px; top: 12px; }
+      .content { max-width: 100%; }
+    }
+  </style>
+</head>
+<body>
+  <div class="notebook">
+    <img src="assets/entry1.jpeg" alt="photo" class="corner-image" />
+    <div class="content">
+      <h1>Adults and Coffee Cups</h1>
+      <p>
+        Not quite proud of the alliteration in the title, but I could not help myself. 
+        </p>
+        <p>
+Drinking a cup of coffee is not a new thing, considering I used to get some whenever mom made extra. It used to feel like a “not me because I am a literal child” thing to do, to be handed a cup of hand-and-mouth-burning-if-you-lack-skill coffee in a delicate and fancy looking china or the ultimate level: stainless steel glass (shoutout to the hotels in Madras who will fill it above and beyond the brim and make it 10x harder to even touch the glass, let alone lift it) and be expected to enjoy it, let alone drink it without many things going wrong. Because it was for adults, it still is. The realization hit me (like the smell of coffee, gradually getting to instense) when I finished drinking a cup of coffee, felt satisfied, and thought to myself “well, that was a good cup of coffee” instead of “haha I am a kid, I get to pretend to be an adult and drink ‘for-adults-only’ coffee!”. The cup no longer felt out of place in my hand, specifically, my short finger(s) knew what they were supposed to do with it to aid a fairly comfortable consumption of the beverage. 
+
+<p>
+Little did I remember at that very moment that it wasn’t, in fact, a mere coincidence. It was years of training kicking in… (who am I flattering, it was months at max) 
+<p>
+I got used to drinking hot coffee from tiny stainless steel glasses, after walking with freshly-filled-with-coffee ones, bringing them from the counter to my table while at least 2-3 people almost bump into me. My hands had learnt how to do that, learning from every time I almost spilled it, had to speed-walk or do a pit stop because the moving hot liquid was unmanageable. Although I don’t crave the beverage that puts me right to sleep or induces a drowsy state like no other, I do appreciate the olfactory familiarity whenever I get to experience wherever I find it. The taste is still horrible, (sugar makes everything better!) but I can look (or taste) past that. I am probably a forgets-she-has-a-subscription member of the coffee drinking club, and now that I realise it, I have become a will-forever-be-new-here member of the adults club. 
+</p>
+----------------------------
+</p>
+
+<p>
+
+Author notes:
+Wrote this while doing laundry and procrastinating on homework, but the thought occurred to me a couple of months ago. I knew I wanted to write about it, so thank you, past me, for the picture. :)
+
+
+
+</p>
+      </p>
+
+
+      
+    </div>
+  </div>
+</body>
+</html>
