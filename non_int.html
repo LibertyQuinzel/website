@@ -1,181 +1,204 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Liberty Quinzel Portfolio</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Swechcha Ambati — Resume</title>
   <style>
-    @font-face {
-      font-family: 'DOSVGA';
-      src: url('PxPlus_IBM_VGA8.ttf') format('truetype');
+    :root{
+      --bg: #ffffff;
+      --text: #0b0b0b;
+      --muted: #6e6e6e;
+      --accent: #6B0F1A; /* burgundy */
+      --gap: 28px;
+      --max-width: 1100px;
+    }
+    html,body{height:100%;margin:0;background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;font-size:16px;-webkit-font-smoothing:antialiased}
+    /* subtle light-grey grid background (rendered as a fixed overlay so it remains visible while scrolling) */
+    body{background-color:var(--bg)}
+    body::before{
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 1000;
+      background-image:
+        linear-gradient(0deg, rgba(0,0,0,0.045) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0,0,0,0.045) 1px, transparent 1px);
+      background-size: 32px 32px;
+      background-position: 0 0;
+      opacity: 0.9;
+      mix-blend-mode: multiply;
     }
 
-    body {
-      font-family: 'DOSVGA', monospace;
-      background-color: #f5f1e6; /* beige background */
-      color: #000000; /* black text */
-      margin: 0;
-      padding: 20px;
-      line-height: 1.6;
-    }
+    .container{max-width:var(--max-width);margin:40px auto;padding:32px;box-sizing:border-box;position:relative}
+    .ribbons{position:absolute;left:32px;top:18px;display:flex;gap:8px;z-index:1001}
+    .ribbon{display:block;height:8px;width:84px;border-radius:2px}
+    .ribbon.teal{background:#000}
+    .ribbon.orange{background:var(--accent)}
+    .grid{display:grid;grid-template-columns:280px 1fr;grid-column-gap:48px;align-items:start}
+    @media (max-width:880px){.grid{grid-template-columns:1fr;gap:18px;padding-bottom:0;padding-top:0}.ribbons{display:none}}
 
-    a {
-      color: #000000;
-      text-decoration: underline;
-    }
+    /* Left column: profile */
+    .profile{border-right:1px solid #e6e6e6;padding-right:24px;position:relative}
+    @media (max-width:880px){.profile{border-right:none;padding-right:0}}
 
-    a:hover {
-      text-decoration: none;
-    }
+    .photo{width:200px;height:200px;border-radius:6px;overflow:hidden;margin-bottom:18px}
+    .photo img{width:100%;height:100%;object-fit:cover;display:block}
 
-    h1, h2, h3 {
-      color: #000000;
-      margin-bottom: 8px;
-    }
+    .name{font-size:20px;font-weight:700;letter-spacing:0.02em;margin:0}
+    .sub{font-size:13px;color:var(--muted);margin-top:6px}
 
-    hr {
-      border: 1px solid #000000;
-      margin: 20px 0;
-    }
+    .contact{margin-top:20px;font-size:14px}
+    .contact a{color:var(--accent);text-decoration:none}
+    .contact a:hover{text-decoration:underline}
+    /* Content/project links should be burgundy (non-interactive page) */
+    .content a{color:#6B0F1A;text-decoration:underline}
+    .content a:visited{color:#6B0F1A}
+    .content a:hover{text-decoration:none}
+    /* accent bar removed */
 
-    .section {
-      margin-bottom: 30px;
-    }
+    /* Right column: content */
+    .content{position:relative}
+    .content h2{font-size:14px;letter-spacing:0.12em;text-transform:uppercase;margin:6px 0 14px 0;color:var(--muted)}
+    .section{margin-bottom:32px}
+    .edu-item,.work-item,.project-item{margin-bottom:14px}
+    .item-title{font-weight:700;margin:0;font-size:16px}
+    .item-meta{font-size:13px;color:var(--muted);margin-top:4px;margin-bottom:8px}
+    ul.clean{padding-left:1rem;margin:0 0 8px 0}
+    ul.clean li{margin-bottom:6px}
 
-    ul {
-      margin-left: 20px;
-    }
+    /* subtle separators */
+    .divider{height:1px;background:#f0f0f0;margin:18px 0}
 
-    /* Header with picture on left */
-    header {
-      display: flex;
-      align-items: center;
-      gap: 20px; /* space between image and text */
-      flex-wrap: wrap; /* allows stacking on small screens */
-    }
-
-    .profile-pic {
-      width: 180px;
-      height: 180px;
-      border-radius: 50%;
-      overflow: hidden;
-      flex-shrink: 0;
-      border: 2px solid #000;
-    }
-
-    .profile-pic img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    /* Responsive: stack on mobile */
-    @media (max-width: 600px) {
-      header {
-        flex-direction: column;
-        align-items: center;
-      }
-      .profile-pic {
-        margin-bottom: 15px;
-        width: 120px;
-        height: 120px;
-      }
-      body { padding: 12px; }
-    }
-
-    @media (max-width: 380px) {
-      .profile-pic { width: 96px; height: 96px; }
-      header { gap: 12px; }
-      body { padding: 10px; }
-    }
+    footer{color:var(--muted);font-size:13px;margin-top:24px}
   </style>
 </head>
 <body>
-
-  <header class="section">
-    <!-- Circular profile picture slot -->
-    <div class="profile-pic">
-      <img src="assets/profile.jpg" alt="Profile Picture">
+  <div class="container">
+    <div class="ribbons" aria-hidden="true">
+      <span class="ribbon teal"></span>
+      <span class="ribbon orange"></span>
     </div>
+    <div class="grid">
+      <aside class="profile" aria-label="Profile">
+        <div class="photo">
+          <img src="assets/profile.jpg" alt="Swechcha Ambati">
+        </div>
+        <h1 class="name">Swechcha Ambati</h1>
+        <div class="sub">Master of Science, Computer Science — New Jersey Institute of Technology</div>
 
-    <div>
-      <h1>Swechcha Ambati</h1>
-      <p>Master of Science in Computer Science, NJIT</p>
-      <p>Email: <a href="mailto:libertyquinzel@gmail.com">libertyquinzel@gmail.com</a></p>
-      <p>LinkedIn: <a href="https://www.linkedin.com/in/ambati-swechcha-7291152a8" target="_blank">linkedin.com/in/swechcha-ambati</a></p>
-      <p>GitHub: <a href="https://github.com/LibertyQuinzel" target="_blank">github.com/LibertyQuinzel</a></p>
-      <p>Resume: <a href="assets/resume.pdf" target="_blank">[open resume]</a></p>
+        <div class="contact">
+          <div>Email: <a href="mailto:libertyquinzel@gmail.com">libertyquinzel@gmail.com</a></div>
+          <div>LinkedIn: <a href="https://www.linkedin.com/in/ambati-swechcha-7291152a8" target="_blank" rel="noopener">linkedin.com/in/swechcha-ambati</a></div>
+          <div>GitHub: <a href="https://github.com/LibertyQuinzel" target="_blank" rel="noopener">github.com/LibertyQuinzel</a></div>
+          <div style="margin-top:8px">Resume: <a href="assets/resume.pdf" target="_blank">Download PDF</a></div>
+        </div>
+        <!-- vertical accent removed -->
+      </aside>
+
+      <main class="content" role="main">
+        <section id="about" class="section">
+          <h2>About</h2>
+          <p>I am currently pursuing my Master’s in Computer Science at NJIT. My interests include operating systems, cryptography, and quantum computing. I am curious about AI and enjoy detective fiction and writing.</p>
+        </section>
+
+        <!-- Reordered: Projects → Work → Education -->
+        <section id="projects" class="section">
+          <h2>Projects</h2>
+          <div class="project-item">
+            <p class="item-title"><a href="https://github.com/LibertyQuinzel/Lesson_Generator_WEBUI" target="_blank" rel="noopener">AI-Powered Lesson Generator</a></p>
+            <div class="item-meta">Full-stack platform to convert topic descriptions into programming curricula; automated tests via GitHub Actions.</div>
+            <ul class="clean"><li>Tools: Python, FastAPI, React, TypeScript, SQLAlchemy, Docker, GitHub Actions, PyTest</li></ul>
+          </div>
+
+          <div class="project-item">
+            <p class="item-title"><a href="https://github.com/LibertyQuinzel/Calculator_Application" target="_blank" rel="noopener">BREAD Calculator with JWT Authentication and CI/CD</a></p>
+            <div class="item-meta">FastAPI app with JWT auth and CI pipelines.</div>
+            <ul class="clean"><li>Tools: Python, FastAPI, PostgreSQL, JWT, Docker, GitHub Actions</li></ul>
+          </div>
+
+          <div class="project-item">
+            <p class="item-title"><a href="https://github.com/LibertyQuinzel/MIA_DEQ" target="_blank" rel="noopener">Breast Cancer Classification using Multi-Scale DEQ</a></p>
+            <div class="item-meta">Deep Equilibrium Model for mammogram classification with XAI techniques.</div>
+            <ul class="clean"><li>Tools: Python, PyTorch, TensorFlow</li></ul>
+          </div>
+
+          <div class="project-item">
+            <p class="item-title"><a href="https://github.com/LibertyQuinzel/Cricket-Commentary-Analysis-NLP" target="_blank" rel="noopener">Cricket Commentary Analysis using NLP</a></p>
+            <div class="item-meta">Transcript analysis to extract highlights and generate summaries using sentiment analysis.</div>
+            <ul class="clean"><li>Tools: Python, Transformers (BERT, BART), NLTK, Word2Vec, PyTorch</li></ul>
+          </div>
+
+          <div class="project-item">
+            <p class="item-title"><a href="https://github.com/LibertyQuinzel/RESEARCH_LAB_MANAGEMENT_SYSTEM" target="_blank" rel="noopener">Research Lab Management System</a></p>
+            <div class="item-meta">Modular Python-based GUI for managing equipment, members, projects, and reports.</div>
+            <ul class="clean"><li>Tools: Python, PostgreSQL</li></ul>
+          </div>
+        </section>
+
+        <div class="divider" aria-hidden="true"></div>
+
+        <section id="work" class="section">
+          <h2>Experience</h2>
+          <div class="work-item">
+            <p class="item-title">Summer Research Intern — QMatter Labs LLC</p>
+            <div class="item-meta">Jun 2024 – Aug 2024</div>
+            <ul class="clean">
+              <li>Worked on improving a hybrid quantum genetic algorithm to optimize charging station placement.</li>
+              <li>Collected and integrated data with an improved fitness function.</li>
+              <li>Developed metrics to analyse algorithm performance.</li>
+            </ul>
+          </div>
+        </section>
+
+        <div class="divider" aria-hidden="true"></div>
+
+        <section id="education" class="section">
+          <h2>Education</h2>
+          <div class="edu-item">
+            <p class="item-title">New Jersey Institute of Technology — Master of Science in Computer Science</p>
+            <div class="item-meta">Sept 2025 · Recipient of the Graduate Provost Scholarship · GPA: 3.83</div>
+            <div class="item-meta" style="color:var(--text);font-weight:600">Coursework:</div>
+            <ul class="clean">
+              <li>Operating Systems Design</li>
+              <li>Database Management System Design</li>
+              <li>Python for Web API Development</li>
+              <li>Medical Image Analysis using Deep Learning</li>
+              <li>Machine Learning with Python</li>
+              <li>Artificial and Computational Intelligence</li>
+              <li>Optimization Techniques for AI</li>
+              <li>Design and Analysis of Algorithms</li>
+              <li>Quantum Computing</li>
+            </ul>
+          </div>
+
+          <div class="edu-item">
+            <p class="item-title">Mahindra University — Bachelor of Technology in Computer Science and Engineering</p>
+            <div class="item-meta">Aug 2021 – Jun 2025 · GPA: 7.82/10</div>
+            <div class="item-meta" style="color:var(--text);font-weight:600">Relevant Coursework:</div>
+            <ul class="clean">
+              <li>Design and Analysis of Algorithms</li>
+              <li>Data Structures and Algorithms</li>
+              <li>Operating Systems</li>
+              <li>Database Management Systems</li>
+              <li>Software Engineering</li>
+              <li>Object-Oriented Programming</li>
+              <li>Microprocessors and Interfacing</li>
+              <li>Machine Learning with Python</li>
+              <li>Medical Image Analysis using Deep Learning</li>
+              <li>Artificial and Computational Intelligence</li>
+              <li>Optimization Techniques for AI</li>
+              <li>Quantum Computing</li>
+            </ul>
+          </div>
+        </section>
+
+        <footer>
+          Credits: Website designed by Swechcha Ambati. Font and system UI fonts used.
+        </footer>
+      </main>
     </div>
-  </header>
-
-  <hr>
-
-  <section class="section" id="about">
-    <h2>About</h2>
-    <p>I am currently pursuing my Master’s in Computer Science at NJIT. My interests include operating systems, cryptography, quantum computing. I am quite confused by and curious about AI. I enjoy reading/watching detective fiction and writing.</p>
-  </section>
-
-  <section class="section" id="education">
-    <h2>Education</h2>
-    <h3>New Jersey Institute of Technology</h3>
-    <p>Master of Science in Computer Science (Sept 2025)<br>Recipient of the Graduate Provost Scholarship<br>GPA: 3.83</p>
-      <p>Coursework: Operating Systems Design, Database Management System Design, Python for Web API Development, Medical Image Analysis using Deep Learning, Machine Learning with Python, Artificial and Computational Intelligence, Optimization Techniques for AI, Design and Analysis of Algorithms, Quantum Computing</p>
-
-    <h3>Mahindra University</h3>
-    <p>Bachelor of Technology in Computer Science and Engineering (Aug 2021 – Jun 2025)<br>GPA: 7.82/10</p>
-    <p>Relevant Coursework: Design and Analysis of Algorithms, Data Structures and Algorithms, Operating Systems, Database Management Systems, Software Engineering, Object-Oriented Programming, Microprocessors and Interfacing, Machine Learning with Python, Medical Image Analysis using Deep Learning, Artificial and Computational Intelligence, Optimization Techniques for AI, Quantum Computing.</p>
-  </section>
-
-  <section class="section" id="work">
-    <h2>Work Experience</h2>
-    <h3>Summer Research Intern — QMatter Labs LLC</h3>
-    <p>Jun 2024 - Aug 2024</p>
-    <ul>
-      <li>Worked on improving a hybrid quantum genetic algorithm to optimize the placement of charging stations.</li>
-      <li>Collected and integrated data with an improved fitness function.</li>
-      <li>Worked on developing metrics to analyse the performance of the algorithm.</li>
-    </ul>
-  </section>
-<section class="section" id="projects">
-  <h2>Projects</h2>
-  <h3><a href="https://github.com/LibertyQuinzel/Lesson_Generator_WEBUI" target="_blank">AI-Powered Lesson Generator</a></h3>
-  <ul>
-    <li>Built a full-stack platform that converts topic descriptions into structured programming curricula with automated tests runnable via GitHub Actions.</li>
-    <li>Implemented FastAPI backend, React frontend, and AI integration using OpenAI GPT-4/3.5 with fallback mechanisms.</li>
-    <li>Tools: Python, FastAPI, React, TypeScript, SQLAlchemy, Docker, GitHub Actions, PyTest</li>
-  </ul>
-
-  <h3><a href="https://github.com/LibertyQuinzel/Calculator_Application" target="_blank">BREAD Calculator with JWT Authentication and CI/CD</a></h3>
-  <ul>
-    <li>Built a FastAPI application with JWT-based authentication and full BREAD functionality.</li>
-    <li>Implemented automated testing and CI pipelines using GitHub Actions and Playwright.</li>
-    <li>Tools: Python, FastAPI, PostgreSQL, JWT, Docker, GitHub Actions</li>
-  </ul>
-
-  <h3><a href="https://github.com/LibertyQuinzel/MIA_DEQ" target="_blank">Breast Cancer Classification using Multi-Scale Deep Equilibrium Model</a></h3>
-  <ul>
-    <li>Implemented a Deep Equilibrium Model for multi-scale mammogram image classification with integrated XAI techniques.</li>
-    <li>Tools: Python, PyTorch, TensorFlow</li>
-  </ul>
-
-  <h3><a href="https://github.com/LibertyQuinzel/Cricket-Commentary-Analysis-NLP" target="_blank">Cricket Commentary Analysis using NLP</a></h3>
-  <ul>
-    <li>Analyzed cricket commentary transcripts to identify interesting overs and generate summaries using sentiment analysis and NLP models.</li>
-    <li>Tools: Python, Transformers (BERT, BART), NLTK, Word2Vec, PyTorch</li>
-  </ul>
-
-  <h3><a href="https://github.com/LibertyQuinzel/RESEARCH_LAB_MANAGEMENT_SYSTEM" target="_blank">Research Lab Management System</a></h3>
-  <ul>
-    <li>Developed a modular Python-based GUI system for managing research lab equipment, members, projects, and reports.</li>
-    <li>Tools: Python, PostgreSQL</li>
-  </ul>
-</section>
-
-
-  <section class="section" id="credits">
-    <h2>Credits</h2>
-    <p>Website designed by Swechcha Ambati. Font obtained from <a href="https://int10h.org/oldschool-pc-fonts/" target="_blank">this website</a> by VileR.</p>
-  </section>
-
+  </div>
 </body>
 </html>
