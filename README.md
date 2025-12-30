@@ -1,26 +1,23 @@
-# Swechcha Ambati Portfolio
+# Swechcha Ambati — Portfolio
 
-A retro **DOS terminal–style portfolio** showcasing education, work, projects, and contact info.
+Retro DOS terminal–style portfolio showcasing education, work, projects, blog entries, and contact info.
 
-**Currently works on PC only! Yet to make it work on mobile devices!**
 ## Features
 
-* **Boot animation** simulating a vintage BIOS.
-* **Interactive terminal** with commands:
-  `info`, `info -l`, `edu`, `work`, `proj`, `res`, `ping`, `cred`, `cls`.
-* **CRT-style visuals**: green text, scanlines, glowing cursor.
-* **Clickable links** for projects, resume, and contact.
+- Boot animation simulating a vintage BIOS.
+- Interactive terminal with commands: `info`, `info -l`, `edu`, `work`, `proj`, `blog`, `res`, `ping`, `cred`, `cls`.
+- Projects and blog entries link to separate HTML pages and external repositories.
+- Mobile-friendly styles (responsive) — use small-screen emulation or open from a phone.
 
-## Tech Stack
+## Editing content
 
-* HTML, CSS, JavaScript
-* Custom DOS-style font: `PxPlus_IBM_VGA8.ttf`
+- `index.html` contains the interactive terminal data arrays (`eduText`, `workText`, `projText`, `blogText`, etc.).
+- `non_int.html` contains a plain HTML copy of the resume for quick access.
+- Blog posts live as individual files (`entry1.html`, `entry2.html`, ...). Add a new entry page and append its link to the `blogText` array in `index.html`.
 
-## Usage
-
-Open `index.html` in a browser and use the terminal commands to explore.
 
 ## Credits
 
-* Font: [PxPlus\_IBM\_VGA8](https://int10h.org/oldschool-pc-fonts/)
-* Designed by **Swechcha Ambati**
+- Font: [PxPlus_IBM_VGA8](https://int10h.org/oldschool-pc-fonts/)
+- Designed and maintained by Swechcha Ambati
+
