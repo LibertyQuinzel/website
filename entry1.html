@@ -132,12 +132,18 @@
     }
 
     @media (max-width: 800px) {
-      .notebook { padding: 28px 24px; }
+      .notebook { padding: 20px 18px; }
       .notebook::after { left: 48px; }
       /* shift the ruled lines to match the smaller padding */
       .notebook::before { background-position: 0 28px; }
-      .corner-image { width: 140px; right: 12px; top: 12px; }
-      .content { max-width: 100%; }
+      .corner-image { width: 120px; right: 12px; top: 12px; }
+      .content { max-width: 100%; font-size: 16px; line-height: 28px; }
+    }
+
+    @media (max-width: 420px) {
+      .notebook { padding: 16px 12px; }
+      .corner-image { width: 92px; right: 8px; top: 8px; }
+      .content { font-size: 14px; line-height: 24px; }
     }
   </style>
 </head>

@@ -14,7 +14,8 @@
       height: 100%;
       margin: 0;
       padding: 0;
-      overflow: hidden;
+      overflow: auto;
+      -webkit-overflow-scrolling: touch;
     }
 
     body {
@@ -180,6 +181,42 @@
     }
     a:hover { 
       text-decoration: underline; 
+    }
+
+    /* Mobile / small-screen adjustments */
+    @media (max-width: 800px) {
+      body {
+        font-size: 14px;
+        padding: 8px;
+        display: block;
+      }
+
+      #crt-container {
+        width: 98%;
+        height: auto;
+        max-width: 100%;
+        margin: 8px auto;
+        perspective: none;
+      }
+
+      #screen {
+        padding: 12px;
+        height: auto;
+        transform: none;
+        border-radius: 8px;
+      }
+
+      #boot-screen, #terminal {
+        font-size: 16px;
+        line-height: 1.3;
+        white-space: pre-wrap;
+      }
+
+      .input-line { white-space: normal; flex-wrap: wrap; }
+      .prompt { display: block; margin-bottom: 6px; }
+
+      .cursor { width: 6px; height: 2px; }
+      .real-input { position: relative; left: 0; width: 100%; }
     }
   </style>
 </head>
