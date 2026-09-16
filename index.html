@@ -286,7 +286,7 @@
       ["work     - work experience    ",     "res      - resume link"],
       ["ping     - contact details    ",    "cred     - credits & website info"],
       ["blog     - blog entries       ",    "skills   - technical skills"],
-      ["cls      - clear the screen   "]
+      ["punchcard- record growth hours",    "cls      - clear the screen   "]
     ];
 
     const eduText = [
@@ -314,34 +314,34 @@
       "  • Worked on developing metrics to analyse the performance of the algorithm."
     ];
 
-const projText = [
-  "<a href='https://github.com/LibertyQuinzel/CS698_Project_TrelloPlus' target='_blank'><span style='color:#87ceeb'>FlowBoard</span></a>",
-  "  • Engineered an AI-assisted collaborative project management platform featuring Kanban workflows, real-time team collaboration, and intelligent board generation from project descriptions",
-  "  • Implemented live drag-and-drop task synchronization, JWT-secured role-based access control, WebSocket-based updates, and AI-powered meeting transcript summarization",
-  "  • Stack: React, TypeScript, Spring Boot, PostgreSQL, WebSockets, JWT Authentication, Docker, Tailwind CSS, AWS",
-  "",
-  "<a href='https://github.com/LibertyQuinzel/Lesson_Generator_WEBUI' target='_blank'><span style='color:#87ceeb'>AI-Powered Lesson Generator</span></a>",
-  "  • Built a full-stack platform that converts topic descriptions into structured programming curricula with automated tests runnable via GitHub Actions.",
-  "  • Implemented FastAPI backend, React frontend, and AI integration using OpenAI GPT-4/3.5 with fallback mechanisms.",
-  "  • Tools: Python, FastAPI, React, TypeScript, SQLAlchemy, Docker, GitHub Actions, PyTest",
-  "",
-  "<a href='https://github.com/LibertyQuinzel/Calculator_Application' target='_blank'><span style='color:#87ceeb'>BREAD Calculator with JWT Authentication and CI/CD</span></a>",
-  "  • Built a FastAPI application with JWT-based authentication and full BREAD functionality.",
-  "  • Implemented automated testing and CI pipelines using GitHub Actions and Playwright.",
-  "  • Tools: Python, FastAPI, PostgreSQL, JWT, Docker, GitHub Actions",
-  "",
-  "<a href='https://github.com/LibertyQuinzel/MIA_DEQ' target='_blank'><span style='color:#87ceeb'>Breast Cancer Classification using Multi-Scale Deep Equilibrium Model</span></a>",
-  "  • Implemented a Deep Equilibrium Model for multi-scale mammogram image classification with integrated XAI techniques.",
-  "  • Tools: Python, PyTorch, TensorFlow",
-  "",
-  "<a href='https://github.com/LibertyQuinzel/Cricket-Commentary-Analysis-NLP' target='_blank'><span style='color:#87ceeb'>Cricket Commentary Analysis using NLP</span></a>",
-  "  • Analyzed cricket commentary transcripts to identify interesting overs and generate summaries using sentiment analysis and NLP models.",
-  "  • Tools: Python, Transformers (BERT, BART), NLTK, Word2Vec, PyTorch",
-  "",
-  "<a href='https://github.com/LibertyQuinzel/RESEARCH_LAB_MANAGEMENT_SYSTEM' target='_blank'><span style='color:#87ceeb'>Research Lab Management System</span></a>",
-  "  • Developed a modular Python-based GUI system for managing research lab equipment, members, projects, and reports.",
-  "  • Tools: Python, PostgreSQL",
-];
+    const projText = [
+      "<a href='https://github.com/LibertyQuinzel/CS698_Project_TrelloPlus' target='_blank'><span style='color:#87ceeb'>FlowBoard</span></a>",
+      "  • Engineered an AI-assisted collaborative project management platform featuring Kanban workflows, real-time team collaboration, and intelligent board generation from project descriptions",
+      "  • Implemented live drag-and-drop task synchronization, JWT-secured role-based access control, WebSocket-based updates, and AI-powered meeting transcript summarization",
+      "  • Stack: React, TypeScript, Spring Boot, PostgreSQL, WebSockets, JWT Authentication, Docker, Tailwind CSS, AWS",
+      "",
+      "<a href='https://github.com/LibertyQuinzel/Lesson_Generator_WEBUI' target='_blank'><span style='color:#87ceeb'>AI-Powered Lesson Generator</span></a>",
+      "  • Built a full-stack platform that converts topic descriptions into structured programming curricula with automated tests runnable via GitHub Actions.",
+      "  • Implemented FastAPI backend, React frontend, and AI integration using OpenAI GPT-4/3.5 with fallback mechanisms.",
+      "  • Tools: Python, FastAPI, React, TypeScript, SQLAlchemy, Docker, GitHub Actions, PyTest",
+      "",
+      "<a href='https://github.com/LibertyQuinzel/Calculator_Application' target='_blank'><span style='color:#87ceeb'>BREAD Calculator with JWT Authentication and CI/CD</span></a>",
+      "  • Built a FastAPI application with JWT-based authentication and full BREAD functionality.",
+      "  • Implemented automated testing and CI pipelines using GitHub Actions and Playwright.",
+      "  • Tools: Python, FastAPI, PostgreSQL, JWT, Docker, GitHub Actions",
+      "",
+      "<a href='https://github.com/LibertyQuinzel/MIA_DEQ' target='_blank'><span style='color:#87ceeb'>Breast Cancer Classification using Multi-Scale Deep Equilibrium Model</span></a>",
+      "  • Implemented a Deep Equilibrium Model for multi-scale mammogram image classification with integrated XAI techniques.",
+      "  • Tools: Python, PyTorch, TensorFlow",
+      "",
+      "<a href='https://github.com/LibertyQuinzel/Cricket-Commentary-Analysis-NLP' target='_blank'><span style='color:#87ceeb'>Cricket Commentary Analysis using NLP</span></a>",
+      "  • Analyzed cricket commentary transcripts to identify interesting overs and generate summaries using sentiment analysis and NLP models.",
+      "  • Tools: Python, Transformers (BERT, BART), NLTK, Word2Vec, PyTorch",
+      "",
+      "<a href='https://github.com/LibertyQuinzel/RESEARCH_LAB_MANAGEMENT_SYSTEM' target='_blank'><span style='color:#87ceeb'>Research Lab Management System</span></a>",
+      "  • Developed a modular Python-based GUI system for managing research lab equipment, members, projects, and reports.",
+      "  • Tools: Python, PostgreSQL",
+    ];
 
     const resumeText = 'resume available <a href="assets/resume.pdf" target="_blank">here</a>';
 
@@ -382,6 +382,7 @@ const projText = [
       "<a href='entry1.html' target='_blank' rel='noopener noreferrer'>adults and coffee cups</a>",
       "<a href='entry2.html' target='_blank' rel='noopener noreferrer'>Traffic lights and twilights</a>",
       "<a href='entry3.html' target='_blank' rel='noopener noreferrer'>Nail polish and Peer pressure</a>",
+      "<a href='entry4.html' target='_blank' rel='noopener noreferrer'>Dear Door Openers: An Open Letter</a>"
     ];
 
     function appendOutput(text) {
@@ -419,7 +420,7 @@ const projText = [
     }
 
     function handleCommand(cmd) {
-      const lowerCmd = cmd.toLowerCase();
+      const lowerCmd = cmd.toLowerCase().trim();
       if (lowerCmd === 'cls') {
         terminal.innerHTML = '';
         introText.forEach(line => appendIntroLine(line));
@@ -433,7 +434,8 @@ const projText = [
         workText.forEach(line => appendOutput(line));
       } else if (lowerCmd === 'proj') {
         projText.forEach(line => appendOutput(line));
-      
+      } else if (lowerCmd === 'skills') {
+        skillsText.forEach(line => appendOutput(line));
       } else if (lowerCmd === 'blog') {
         blogText.forEach(line => appendOutput(line));
       } else if (lowerCmd === 'ping') {
@@ -449,6 +451,11 @@ const projText = [
           "Linux Mint Cinnamon user — so judge me accordingly :)\n" +
           "I read/watch detective fiction and love to write."
         );
+      } else if (lowerCmd === 'punchcard' || lowerCmd === 'compile' || lowerCmd === 'growth') {
+        appendOutput("INITIALIZING MECHANICAL RE-PUNCH STATION ENGINES...");
+        setTimeout(() => {
+          window.location.href = 'punchcard.html';
+        }, 800);
       } else {
         appendOutput(`bad command or file name: ${cmd}`);
       }
