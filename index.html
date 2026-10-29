@@ -286,7 +286,7 @@
       ["work     - work experience    ",     "res      - resume link"],
       ["ping     - contact details    ",    "cred     - credits & website info"],
       ["blog     - blog entries       ",    "skills   - technical skills"],
-      ["punchcard- record growth hours",    "cls      - clear the screen   "]
+      ["cls      - clear the screen   "]
     ];
 
     const eduText = [
@@ -307,6 +307,18 @@
     const workText = [
       "Experience",
       "------------------------------------------------------------",
+      "<a href='https://kelloggm.github.io/cs-490-website/staff/' target='_blank'><span style='color:#87ceeb'>Teaching Assistant, CS 490</span></a><span class='command'> — New Jersey Institute of Technology</span>",
+      "Sep 2026 - Present",
+      "  • Serve as a project mentor for student software projects in CS 490.",
+      "  • Hold weekly office hours to help students with course projects and assignments.",
+      "",
+      "<span class='command'>Library Student Associate (Graduate, Opening/Closing Shift) — Van Houten Library, NJIT</span>",
+      "Sep 2026 - Present",
+      "  • Open and close the library on scheduled shifts and secure the building.",
+      "  • Handle circulation tasks: check-ins, check-outs, renewals, and group study room reservations.",
+      "  • Assist patrons in person, by phone, and by email with directions and locating library materials.",
+      "  • Provide basic computer and printing support when the lab assistant is unavailable.",
+      "",
       "<span class='command'>Summer Research Intern — QMatter Labs LLC</span>",
       "Jun 2024 - Aug 2024",
       "  • Worked on improving a hybrid quantum genetic algorithm to optimize the placement of charging stations.",
@@ -451,11 +463,6 @@
           "Linux Mint Cinnamon user — so judge me accordingly :)\n" +
           "I read/watch detective fiction and love to write."
         );
-      } else if (lowerCmd === 'punchcard' || lowerCmd === 'compile' || lowerCmd === 'growth') {
-        appendOutput("INITIALIZING MECHANICAL RE-PUNCH STATION ENGINES...");
-        setTimeout(() => {
-          window.location.href = 'punchcard.html';
-        }, 800);
       } else {
         appendOutput(`bad command or file name: ${cmd}`);
       }
